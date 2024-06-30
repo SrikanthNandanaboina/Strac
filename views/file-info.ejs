@@ -1,0 +1,46 @@
+<main>
+  <div
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    "
+  >
+    <a href="/">go back</a>
+    <div style="display: flex; flex-direction: column; margin-top: 12px">
+      <% for (var i = 0; i < users.length; i++) { %>
+      <div
+        style="display: flex; justify-content: flex-start; align-items: center"
+      >
+        <h5 style="margin: 4px 4px">
+          <%= users[i].grantedTo.user.displayName %> -
+        </h5>
+        <h5>Roles: <%= users[i].roles.join(" | "); %></h5>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</main>
+<div id="notifications"></div>
+
+<!-- Include the Socket.IO client library -->
+<script
+  src="https://cdn.socket.io/4.7.5/socket.io.min.js"
+  integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO"
+  crossorigin="anonymous"
+></script>
+<script>
+  // Get the Socket.IO URL from the server
+  var socketIoUrl = "<%- socketIoUrl %>";
+  // Connect to the external Socket.IO server
+  var socket = io(socketIoUrl);
+
+  socket.on("connect", () => console.log("Connected!"));
+  socket.on("notification", (data) => console.log("Notification!", data));
+
+  socket.on("disconnect", function () {
+    console.log("Disconnected from Socket.IO server");
+  });
+</script>

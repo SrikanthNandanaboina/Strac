@@ -1,0 +1,19 @@
+<main>
+  <div
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    "
+  >
+    <% if(isAuthenticated){ %>
+    <div style="display: flex; flex-direction: column">
+      <a href="/users/profile">Show Profile</a>
+      <a href="/users/files">Show Documents</a>
+    </div>
+    <% } else{ %>
+    <a href="/auth/signin">login</a>
+    <% } %>
+  </div>
+</main>

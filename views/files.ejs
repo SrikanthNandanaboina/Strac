@@ -1,0 +1,25 @@
+<main>
+  <div
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    "
+  >
+    <a href="/">go back</a>
+    <div style="display: flex; flex-direction: column; margin-top: 12px">
+      <% for (var i = 0; i < files.length; i++) { %>
+      <div
+        style="display: flex; justify-content: flex-start; align-items: center"
+      >
+        <h5 style="margin: 4px 12px"><%= files[i].name %></h5>
+        <a target="_blank" href="<%= files[i].downloadUrl %>">Download </a>
+        &nbsp;&nbsp;&nbsp;
+        <a href="/users/file/<%= files[i].id %>">show Permissions </a>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</main>

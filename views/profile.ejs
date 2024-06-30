@@ -1,0 +1,25 @@
+<main>
+  <div
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    "
+  >
+    <a href="/">go back</a>
+    <div style="display: flex; flex-direction: column; margin-top: 12px">
+      <% for (var i = 0; i < data.length; i++) { %>
+      <div
+        style="display: flex; justify-content: flex-start; align-items: center"
+      >
+        <h5 style="color: cadetblue; margin: 4px 0">
+          <%= data[i].key %>:&nbsp;&nbsp;
+        </h5>
+        <h5 style="color: cadetblue; margin: 4px 0"><%= data[i].value %></h5>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</main>
