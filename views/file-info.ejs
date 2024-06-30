@@ -10,7 +10,11 @@
   >
     <a href="/">go back</a>
     <div style="display: flex; flex-direction: column; margin-top: 12px">
-      <% for (var i = 0; i < users.length; i++) { %>
+      <% if(users.length == 0){ %>
+      <div style="display: flex; flex-direction: column">
+        <h5 style="color: red">File not shared with anyone</h5>
+      </div>
+      <% } %> <% for (var i = 0; i < users.length; i++) { %>
       <div
         style="display: flex; justify-content: flex-start; align-items: center"
       >

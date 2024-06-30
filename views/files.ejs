@@ -10,9 +10,16 @@
   >
     <a href="/">go back</a>
     <div style="display: flex; flex-direction: column; margin-top: 12px">
-      <% for (var i = 0; i < files.length; i++) { %>
+      <% if(files.length === 0){ %>
+      <h5 style="color: red">No Files Found</h5>
+      <% } %> <% for (var i = 0; i < files.length; i++) { %>
       <div
-        style="display: flex; justify-content: flex-start; align-items: center"
+        style="
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          margin-top: 12px;
+        "
       >
         <h5 style="margin: 4px 12px"><%= files[i].name %></h5>
         <a target="_blank" href="<%= files[i].downloadUrl %>">Download </a>
