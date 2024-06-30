@@ -41,3 +41,9 @@ Before running the application, make sure to set up the following environment va
 ## License
 
 This project is licensed under the MIT License.
+
+## Demo
+
+https://github.com/SrikanthNandanaboina/Strac/assets/44095055/cf5246e3-3079-402a-a6f3-f540bd2cf257
+
+
